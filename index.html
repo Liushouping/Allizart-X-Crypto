@@ -100,20 +100,22 @@ class="wrap">
     </div>
     <!-- Banner -->
     <section 
+    id="banner" 
     class="h-screen relative overflow-hidden flex justify-center items-center bg-cover bg-center" 
     style="background-image: url(./image/2021-Banner-01.png);">
         <div
         class="text-center text-white">
             <h1
-            class="text-5xl font-bold"
+            class="text-5xl font-bold b-txt-01"
             style="text-shadow: black 0.1em 0.1em 0.2em">Your Surprise !</h1>
             <h2
-            class="text-4xl font-bold mt-2"
+            class="text-4xl font-bold mt-2 b-txt-02"
             style="text-shadow: black 0.1em 0.1em 0.2em">Make future from the crypto</h2>
         </div>
     </section>
     <!-- Sell -->
     <section 
+    id="sell" 
     class="bg-white">
         <div 
         class="max-w-6xl px-6 py-12 mx-auto">
@@ -125,7 +127,8 @@ class="wrap">
 
             <div 
             class="grid gap-4 md:gap-20 mt-10 md:grid-cols-2 lg:grid-cols-3">
-                <div>
+                <div 
+                class="s-img">
                     <div 
                     class="px-10 py-16 bg-red-600 rounded-md flex justify-center items-start flex-col border-4 border-red-600">
                         <h2 
@@ -136,7 +139,8 @@ class="wrap">
                     <p
                     class="mt-4">Find the best angle from Buy the blind box Hit or lose which to catch the moment</p>
                 </div>
-                <div>
+                <div 
+                class="s-img">
                     <div 
                     class="px-10 py-16 bg-white rounded-md flex justify-center items-start flex-col border-4 border-black">
                         <h2 
@@ -147,7 +151,8 @@ class="wrap">
                     <p
                     class="mt-4">Buy the blind box Hit or lose which to catch the moment you can get the NFT</p>
                 </div>
-                <div>
+                <div 
+                class="s-img">
                     <div 
                     class="px-10 py-16 bg-black rounded-md flex justify-center items-start flex-col border-4 border-black">
                         <h2 
@@ -163,6 +168,7 @@ class="wrap">
     </section>
     <!-- Product -->
     <section 
+    id="product" 
     class="bg-white">
         <div 
         class="max-w-6xl px-6 py-12 mx-auto">
@@ -175,11 +181,11 @@ class="wrap">
             <div 
             class="grid gap-10 mt-10 grid-cols-1">
                 <div 
-                class="relative flex content-center items-center justify-center rounded-3xl">
+                class="relative flex content-center items-center justify-center rounded-3xl p-img">
                     <img src="./image/2021-Product-01.png">
                 </div>
                 <div 
-                class="relative flex content-center items-center justify-center">
+                class="relative flex content-center items-center justify-center p-img">
                     <img src="./image/2021-Product-02.png">
                     <span class="w-full h-full absolute opacity-75 bg-black rounded-3xl">
                     </span>
@@ -187,7 +193,7 @@ class="wrap">
                     class="absolute font-bold text-4xl text-white">SOLD OUT  : (</h2>
                 </div>
                 <div 
-                class="relative flex content-center items-center justify-center">
+                class="relative flex content-center items-center justify-center p-img">
                     <img src="./image/2021-Product-03.png">
                     <span class="w-full h-full absolute opacity-75 bg-black rounded-3xl"></span>
                     <h2
@@ -198,6 +204,7 @@ class="wrap">
     </section>
     <!-- Partner -->
     <section 
+    id="Partner" 
     class="bg-white">
         <div 
         class="max-w-6xl px-6 py-12 mx-auto">
@@ -211,13 +218,13 @@ class="wrap">
             class="grid gap-4 mt-10 py-6 md:grid-cols-2 lg:grid-cols-3">
                 <div>
                     <div 
-                    class="w-48 h-48 flex justify-start items-center mx-auto md:w-auto">
+                    class="w-48 h-48 flex justify-start items-center mx-auto md:w-auto pa-img">
                         <img src="./image/2021-Partner-01.png">
                     </div>
                 </div>
                 <div>
                     <div 
-                    class="w-48 h-48 flex justify-start items-center mx-auto md:w-auto">
+                    class="w-48 h-48 flex justify-start items-center mx-auto md:w-auto pa-img">
                         <img src="./image/2021-Partner-02.png">
                     </div>
                 </div>
@@ -228,7 +235,7 @@ class="wrap">
     <footer 
     class="text-white bg-gray-900">
         <div 
-        class="max-w-6xl mx-auto flex items-center md:flex-row md:flex-nowrap flex-wrap flex-col py-20">
+        class="max-w-6xl mx-auto flex items-center md:flex-row md:flex-nowrap flex-wrap flex-col py-20 footer">
             <div 
             class="w-1/2 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
                 <a 
@@ -244,7 +251,7 @@ class="wrap">
                 <div 
                 class="w-full">
                     <div
-                    class="flex justify-center md:justify-end items-center py-4">
+                    class="flex justify-center md:justify-end items-center py-4 footer">
                         <a 
                         class="p-2 bg-gray-700 rounded-l-lg" 
                         href="javascript:;">
@@ -335,6 +342,7 @@ class="wrap">
 <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
 
 <script>
 
@@ -385,7 +393,20 @@ class="wrap">
 
     });
 
-    
+    /*=============== SCROLL REVEAL ANIMATION ===============*/
+    const sr = ScrollReveal({
+      origin: 'top',
+      distance: '60px',
+      duration: 2500,
+      delay: 400,
+      // reset: true
+    })
+
+    sr.reveal(`.footer`)
+    sr.reveal(`.b-txt-01, .b-txt-02`, {delay: 500})
+    sr.reveal(`.s-img, .p-img`,{interval: 100})
+    sr.reveal(`.pa-img`,{origin: 'right'})
+    sr.reveal(`.celebrate__img, .message__img, .footer__img2`,{origin: 'left'})    
 </script>
 
 </body>
